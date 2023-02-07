@@ -1,0 +1,31 @@
+module.exports=(Sequelize,sequelize)=>{
+    const user=sequelize.define("user",{
+        id:{
+            type:Sequelize.INTEGER,
+            autoIncrement:true,
+            primaryKey:true
+        },
+        username:{
+            type:Sequelize.STRING,
+            allowNull:true
+        },
+        password:{
+            type:Sequelize.STRING,
+            allowNull:true
+        },
+        email:{
+            type:Sequelize.STRING,
+            allowNull:true
+        },
+        phoneno:{
+            type:Sequelize.INTEGER
+        },
+        isVerified:{
+            type:Sequelize.BOOLEAN,
+            defaultValue:false
+        }
+    },{
+        tableName:"users"
+    })
+    return user
+}
